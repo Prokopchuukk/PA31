@@ -18,3 +18,5 @@ jobs:
         autoreconf --install
         ./configure
         make dist
+      - name: Build Debian package
+      run: dpkg-buildpackage -us -uc -b
