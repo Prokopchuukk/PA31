@@ -1,3 +1,4 @@
 bin_PROGRAMS = program
 program_SOURCES = main.cpp
-dist_doc_DATA = README.md
+check_PROGRAMS = test
+test_SOURCES = test.cpp
