@@ -1,20 +1,22 @@
 name: Build C++ Program
+
 on:
  push:
   branches:
    - branchMake
+
 jobs:
  build:
   runs-on: ubuntu-latest
-   steps:
+  steps:
     - name: Checkout repository
-    uses: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: Install build tools
-    run: sudo apt-get update && sudo apt-get install -y build-essential
+      run: sudo apt-get update && sudo apt-get install -y build-essential
     - name: Build project
-    run: make
+      run: make
     - name: Generate tarball
-    run: |
-     autoreconf --install
-     ./configure
-     make dist
+      run: |
+        autoreconf --install
+        ./configure
+        make dist
